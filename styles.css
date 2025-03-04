@@ -1,0 +1,319 @@
+/* Reset y fuentes */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+/* Diseño de cuadrícula */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .grid-container {
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Secciones */
+section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode section {
+    background-color: #333;
+}
+
+h2 {
+    color: #005f73;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input, select, button {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode input, body.dark-mode select, body.dark-mode button {
+    background-color: #444;
+    color: #f0f0f0;
+    border-color: #666;
+}
+
+input:focus, select:focus {
+    border-color: #005f73;
+    box-shadow: 0 0 5px rgba(0, 95, 115, 0.5);
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004855;
+}
+
+/* Tablas */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode table {
+    background-color: #444;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+body.dark-mode th, body.dark-mode td {
+    border-color: #666;
+}
+
+th {
+    background-color: #005f73;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+body.dark-mode tr:nth-child(even) {
+    background-color: #555;
+}
+
+.delete-btn {
+    background-color: #e63946;
+}
+
+.delete-btn:hover {
+    background-color: #d62828;
+}
+
+.paid-btn {
+    background-color: #2a9d8f;
+}
+
+.paid-btn:hover {
+    background-color: #21867a;
+}
+
+/* Notificaciones */
+.alert {
+    padding: 15px;
+    background-color: #ffcc00;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#download-pdf {
+    background-color: #e76f51;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#download-pdf:hover {
+    background-color: #d65a3b;
+}
+
+.no-subscriptions {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .no-subscriptions {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+/* Botón de deshacer */
+.undo-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#undo-button {
+    background-color: #2a9d8f;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#undo-button:hover {
+    background-color: #21867a;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para botones en modo oscuro */
+body.dark-mode button {
+    background-color: #a0a0a0;
+    color: #000000;
+    border: 1px solid #666;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+    border-color: #777;
+}
+
+/* Botones específicos en modo oscuro */
+body.dark-mode .paid-btn {
+    background-color: #2a9d8f;
+    border-color: #21867a;
+}
+
+body.dark-mode .paid-btn:hover {
+    background-color: #21867a;
+}
+
+body.dark-mode .delete-btn {
+    background-color: #e63946;
+    border-color: #d62828;
+}
+
+body.dark-mode .delete-btn:hover {
+    background-color: #d62828;
+}
+
+body.dark-mode #download-pdf {
+    background-color: #e76f51;
+    border-color: #d65a3b;
+}
+
+body.dark-mode #download-pdf:hover {
+    background-color: #d65a3b;
+}
+
+body.dark-mode #clear-summary {
+    background-color: #e63946;
+    border-color: #d62828;
+}
+
+body.dark-mode #clear-summary:hover {
+    background-color: #d62828;
+}
+
+body.dark-mode #undo-button {
+    background-color: #2a9d8f;
+    border-color: #21867a;
+}
+
+body.dark-mode #undo-button:hover {
+    background-color: #21867a;
+}
+
+body.dark-mode h2 {
+    color: #00b4d8;
+}
+
+.add-btn {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.add-btn.dark-mode {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.add-btn.dark-mode:hover {
+    background-color: #218838;
+}

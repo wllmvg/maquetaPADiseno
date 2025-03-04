@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Suscripciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>📅 Gestor de Suscripciones</h1>
+        <p>Mantén un control inteligente de tus suscripciones.</p>
+        <br>
+        <button id="theme-toggle">
+            <i class="fas fa-moon"></i> Modo Oscuro
+        </button>
+    </header>
+
+    <main class="grid-container">
+        <!-- Columna izquierda -->
+        <div class="left-column">
+            <!-- Bloque: Agregar Nueva Suscripción -->
+            <section id="add-subscription">
+                <h2><i class="fas fa-plus-circle"></i> Agregar Nueva Suscripción</h2>
+                <form id="subscription-form">
+                    <div class="form-group">
+                        <label for="service-name">Servicio:</label>
+                        <select id="service-name">
+                            <option value="Netflix">Netflix</option>
+                            <option value="Spotify">Spotify</option>
+                            <option value="Amazon Prime">Amazon Prime</option>
+                            <option value="Disney+">Disney+</option>
+                            <option value="HBO Max">HBO Max</option>
+                            <option value="Apple Music">Apple Music</option>
+                            <option value="Otro">Otro...</option>
+                        </select>
+                        <input type="text" id="custom-service" placeholder="Escribe el nombre..." style="display: none;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cost">Costo (USD):</label>
+                        <input type="number" id="cost" placeholder="Ej: 9.99" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment-date">Fecha de Pago:</label>
+                        <input type="date" id="payment-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Categoría:</label>
+                        <select id="category">
+                            <option>Entretenimiento</option>
+                            <option>Música</option>
+                            <option>Educación</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="add-subscription-btn" class="add-btn">
+                        <i class="fas fa-check"></i> Agregar Suscripción
+                    </button>                  
+                </form>
+            </section>
+
+            <!-- Bloque: Suscripciones Activas -->
+            <section id="subscriptions">
+                <h2><i class="fas fa-list"></i> Suscripciones Activas</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Costo</th>
+                                <th>Fecha de Pago</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subscription-list">
+                            <!-- Suscripciones dinámicas -->
+                        </tbody>
+                    </table>
+                    <p id="no-subscriptions" class="no-subscriptions">No hay suscripciones activas.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="right-column">
+            <!-- Bloque: Resumen de Pagos -->
+            <section id="summary">
+                <h2><i class="fas fa-file-alt"></i> Resumen de Pagos</h2>
+                <div class="table-container">
+                    <table id="paid-table">
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Costo</th>
+                                <th>Fecha de Pago</th>
+                                <th>Categoría</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paid-list">
+                            <!-- Servicios pagados -->
+                        </tbody>
+                    </table>
+                    <p id="no-payments" class="no-subscriptions">No hay pagos registrados.</p>
+                </div>
+                <div class="summary-actions">
+                    <button id="download-pdf">
+                        <i class="fas fa-download"></i> Descargar Resumen en PDF
+                    </button>
+                    <button id="clear-summary">
+                        <i class="fas fa-trash"></i> Eliminar Resumen
+                    </button>
+                </div>
+                <div id="undo-container" class="undo-container" style="display: none;">
+                    <button id="undo-button">
+                        <i class="fas fa-undo"></i> Deshacer
+                    </button>
+                </div>
+            </section>
+
+            <!-- Bloque: Notificaciones -->
+            <section id="notifications">
+                <h2><i class="fas fa-bell"></i> Notificaciones</h2>
+                <div id="alerts"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Creado con ❤️ por <span>Heller Jaimes</span>, <span>Angel Infante</span>, <span>William Vega</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="jspdf.js"></script>
+</body>
+</html>
