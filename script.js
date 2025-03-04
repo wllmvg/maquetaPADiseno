@@ -18,30 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let paidSubscriptions = JSON.parse(localStorage.getItem("paidSubscriptions")) || [];
     let deletedSubscriptions = []; // Para almacenar temporalmente los registros eliminados
 
-    // Verificar si el usuario ya tiene una preferencia guardada en localStorage
-    const savedTheme = localStorage.getItem("theme");
-    
-
-    // Establecer el tema inicial
-    if (savedTheme === "dark" || (!savedTheme && prefersDarkMode)) {
-        document.body.classList.add("dark-mode");
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
-    } else {
-        document.body.classList.remove("dark-mode");
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
-    }
-
-    // Alternar entre modo oscuro y claro
-    themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const isDarkMode = document.body.classList.contains("dark-mode");
-        themeToggle.innerHTML = isDarkMode
-            ? '<i class="fas fa-sun"></i> Modo Claro'
-            : '<i class="fas fa-moon"></i> Modo Oscuro';
-
-        // Guardar la preferencia del usuario en localStorage
-        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    });
 
     // Mostrar u ocultar el campo de servicio personalizado
     serviceNameSelect.addEventListener("change", () => {
